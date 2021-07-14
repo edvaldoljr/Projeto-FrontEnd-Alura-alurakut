@@ -21,6 +21,27 @@
    </Box>
    )
  }
+function ProfileRelationsBox(propriedades) {
+  return(
+    <ProfileRelationsBoxWrapper>
+       <h2 className="smallTitle">
+              {propriedades.title} ({propriedades.items.length})
+            </h2>
+          <ul>
+            {/*{seguidores.map((itemAtual) => {
+              return (
+                  <li id = {itemAtual}>
+                      <a href={`https://github.com/${itemAtual}.png`}>
+                        <img src={itemAtual.image} /> 
+                        <span>{itemAtual.title}</span>
+                      </a>
+                  </li>
+                )
+              })} */}
+          </ul>
+       </ProfileRelationsBoxWrapper>
+  )
+}
 
  export default function Home() {
   
@@ -40,7 +61,19 @@
     'felipefialho'
   ]
 
- 
+      const [seguidores, setSeguidores] = React.useState([]);
+      React.useEffect(function(){
+        fetch('https://api.github.com/users/edvaldoljr/followers')
+        .then(function (respostaDoServidor) {
+          return respostaDoServidor.json();
+        })
+        .then(function(respostaCompleta){
+          setSeguidores(respostaCompleta);
+        })
+      }, [])
+
+      console.log(seguidores);
+
     return (
     <>
     <AlurakutMenu />
@@ -104,6 +137,7 @@
 
        </div>
        <div className ="profileRelationsArea" style={{ gridArea: 'profileRelationsArea'}}>
+         
        <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Amigos ({pessoasFavoritas.length})
@@ -113,7 +147,7 @@
             {pessoasFavoritas.map((itemAtual) => {
               return (
                 <li key = {itemAtual}>
-                <a href={`/users/${itemAtual}`} key={itemAtual}>
+                     <a href={`/users/${itemAtual}`}>
                         <img src={`https://github.com/${itemAtual}.png`} />
                         <span>{itemAtual}</span>
                       </a>
@@ -122,6 +156,9 @@
               })}
             </ul>
           </ProfileRelationsBoxWrapper>
+
+          <ProfileRelationsBox title = "Seguidores" items = {seguidores}/>
+          
        <ProfileRelationsBoxWrapper>
        <h2 className="smallTitle">
               Comunidades ({comunidades.length})
