@@ -62,7 +62,7 @@ function ProfileRelationsBox(propriedades) {
   ]
 
       const [seguidores, setSeguidores] = React.useState([]);
-      const [amigos, setAmigos] = React.useState([]);
+      const [seguindo, setAmigos] = React.useState([]);
       // 0 -  Pegar o array de dados do github
       React.useEffect(function(){
         //GET 
@@ -171,7 +171,7 @@ function ProfileRelationsBox(propriedades) {
             </ul>
           </ProfileRelationsBoxWrapper> */}
 
-          <ProfileRelationsBox title = "Amigos" items = {amigos}/>   
+          <ProfileRelationsBox title = "Seguindo" items = {seguindo}/>   
            
           <ProfileRelationsBox title = "Seguidores" items = {seguidores}/>
           
