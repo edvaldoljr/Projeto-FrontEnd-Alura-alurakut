@@ -46,20 +46,16 @@ function ProfileRelationsBox(propriedades) {
  export default function Home() {
   
   const usuarioAleatorio = 'edvaldoljr'
-  const [comunidades, setComunidades] = React.useState([{
-    id: '12802378123789378912789789123896123',
-    title: 'Eu odeio acordar cedo',
-    image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
-  }]);
+  const [comunidades, setComunidades] = React.useState([]);
   // const comunidades = ['AluraKut' ];
-  const pessoasFavoritas = [
-    'juunegreiros',
-    'omariosouto',
-    'peas',
-    'rafaballerini',
-    'marcobrunodev',
-    'felipefialho'
-  ]
+  // const pessoasFavoritas = [
+  //   'juunegreiros',
+  //   'omariosouto',
+  //   'peas',
+  //   'rafaballerini',
+  //   'marcobrunodev',
+  //   'felipefialho'
+  // ]
 
       const [seguidores, setSeguidores] = React.useState([]);
       const [seguindo, setAmigos] = React.useState([]);
@@ -81,9 +77,38 @@ function ProfileRelationsBox(propriedades) {
         .then(function(respostaCompleta){
           setAmigos(respostaCompleta);
         })
+
+        // API GraphQL
+        fetch('https://graphql.datocms.com/',{
+          method: 'POST', 
+          headers: {
+            'Authorization': '9a21a208727d61f8b83d3753e02998 ',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({ "query": `query {
+             allCommunities {
+              title
+              id
+              imageUrl
+              creatorSlug
+            }
+          }` })
+        })
+        .then((response) => response.json()) // Pega o retorno do response.json e já retorna
+        .then((respostaCompleta) => {
+            const comunidadesVindasDoDato = respostaCompleta.data.allCommunities;
+            console.log(comunidadesVindasDoDato)
+            setComunidades(comunidadesVindasDoDato)
+
+            
+        }) 
+        // .then(function(response){
+        //   return response.json()
+        // })
       }, [])
 
-      console.log(seguidores);
+      //console.log(seguidores);
 
       // 1 - Criar um box que vaiu ter um map, baseados no item do array 
       // que pegamos do github
@@ -171,7 +196,7 @@ function ProfileRelationsBox(propriedades) {
             </ul>
           </ProfileRelationsBoxWrapper> */}
 
-          <ProfileRelationsBox title = "Seguindo" items = {seguindo}/>   
+           <ProfileRelationsBox title = "Seguindo" items = {seguindo}/>   
            
           <ProfileRelationsBox title = "Seguidores" items = {seguidores}/>
           
@@ -183,8 +208,8 @@ function ProfileRelationsBox(propriedades) {
             {comunidades.map((itemAtual) => {
               return (
                   <li key = {itemAtual.id}>
-                      <a href={`/users/${itemAtual.title}`}>
-                        <img src={itemAtual.image} /> 
+                      <a href={`/comunidades/${itemAtual.id}`}>
+                        <img src={itemAtual.imageUrl} /> 
                         <span>{itemAtual.title}</span>
                       </a>
                   </li>
