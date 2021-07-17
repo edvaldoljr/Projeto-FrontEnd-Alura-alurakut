@@ -28,16 +28,16 @@ function ProfileRelationsBox(propriedades) {
               {propriedades.title} ({propriedades.items.length})
             </h2>
           <ul>
-            {/*{seguidores.map((itemAtual) => {
+            {propriedades.items.map((itemAtual) => {
               return (
-                  <li id = {itemAtual}>
-                      <a href={`https://github.com/${itemAtual}.png`}>
-                        <img src={itemAtual.image} /> 
-                        <span>{itemAtual.title}</span>
+                  <li key = {itemAtual.id}>
+                      <a href={itemAtual.html_url}>
+                        <img src={itemAtual.avatar_url} /> 
+                        <span>{itemAtual.login}</span>
                       </a>
                   </li>
                 )
-              })} */}
+              })}
           </ul>
        </ProfileRelationsBoxWrapper>
   )
@@ -62,7 +62,10 @@ function ProfileRelationsBox(propriedades) {
   ]
 
       const [seguidores, setSeguidores] = React.useState([]);
+      const [amigos, setAmigos] = React.useState([]);
+      // 0 -  Pegar o array de dados do github
       React.useEffect(function(){
+        //GET 
         fetch('https://api.github.com/users/edvaldoljr/followers')
         .then(function (respostaDoServidor) {
           return respostaDoServidor.json();
@@ -70,13 +73,24 @@ function ProfileRelationsBox(propriedades) {
         .then(function(respostaCompleta){
           setSeguidores(respostaCompleta);
         })
+
+        fetch('https://api.github.com/users/edvaldoljr/following')
+        .then(function (respostaDoServidor) {
+          return respostaDoServidor.json();
+        })
+        .then(function(respostaCompleta){
+          setAmigos(respostaCompleta);
+        })
       }, [])
 
       console.log(seguidores);
 
+      // 1 - Criar um box que vaiu ter um map, baseados no item do array 
+      // que pegamos do github
+
     return (
     <>
-    <AlurakutMenu />
+    <AlurakutMenu githubUser={usuarioAleatorio}/>
      <MainGrid>
        <div className ="profileArea" style={{ gridArea: 'profileArea'}}>
           <ProfileSidebar githubUser = {usuarioAleatorio} />
@@ -138,7 +152,7 @@ function ProfileRelationsBox(propriedades) {
        </div>
        <div className ="profileRelationsArea" style={{ gridArea: 'profileRelationsArea'}}>
          
-       <ProfileRelationsBoxWrapper>
+       {/* <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Amigos ({pessoasFavoritas.length})
             </h2>
@@ -155,8 +169,10 @@ function ProfileRelationsBox(propriedades) {
                 )
               })}
             </ul>
-          </ProfileRelationsBoxWrapper>
+          </ProfileRelationsBoxWrapper> */}
 
+          <ProfileRelationsBox title = "Amigos" items = {amigos}/>   
+           
           <ProfileRelationsBox title = "Seguidores" items = {seguidores}/>
           
        <ProfileRelationsBoxWrapper>
@@ -166,7 +182,7 @@ function ProfileRelationsBox(propriedades) {
           <ul>
             {comunidades.map((itemAtual) => {
               return (
-                  <li id = {itemAtual.id}>
+                  <li key = {itemAtual.id}>
                       <a href={`/users/${itemAtual.title}`}>
                         <img src={itemAtual.image} /> 
                         <span>{itemAtual.title}</span>
