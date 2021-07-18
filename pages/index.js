@@ -123,15 +123,15 @@ function ProfileRelationsBox(propriedades) {
        <div className ="welcomeArea" style={{ gridArea: 'welcomeArea'}}>
        <Box>
             <h1 className="title">
-              Bem vindo (a) Edvaldo Junior
+               ♣ ̎€ɖvαℓdơ ʝǔɲɨǾȓ ♣➹ 
               <hr/>
             </h1>
 
             <OrkutNostalgicIconSet />
             <hr/>
             <div>
-                  <h4>Quem eu sou:</h4>
-                   Meu nome é Edvaldo tenho 27 anos e atualmente estudo Desenvolvimento de Software 
+               <p>Quem eu sou: <h5>Meu nome é Edvaldo tenho 27 anos e atualmente estudo Desenvolvimento de Software</h5></p>   
+                 <img src="https://img.ibxk.com.br/materias/3991/81224.gif"/> 
             </div>
           </Box>
 
