@@ -130,8 +130,21 @@ function ProfileRelationsBox(propriedades) {
             <OrkutNostalgicIconSet />
             <hr/>
             <div>
-               <p>Quem eu sou: <h5>Meu nome é Edvaldo tenho 27 anos e atualmente estudo Desenvolvimento de Software</h5></p>   
+               <p>Quem sou eu: <h5>Meu nome é Edvaldo tenho 27 anos e atualmente estudo Desenvolvimento de Software</h5></p>   
                  <img src="https://img.ibxk.com.br/materias/3991/81224.gif"/> 
+                 <h5>
+              Loading…
+              5%
+              █▒▒▒▒▒▒▒▒
+              10%
+              ███▒▒▒▒▒▒
+              30%
+              █████▒▒▒▒
+              50%
+              ███████▒▒▒▒
+              {/* 100%
+              ██████████ */}
+              </h5>
             </div>
           </Box>
 
@@ -145,12 +158,26 @@ function ProfileRelationsBox(propriedades) {
               console.log('Campos', dadosDoForm.get('image'));
               
               const comunidade = {
-                id: new Date().toISOString,
                 title: dadosDoForm.get('title'),
-                image: dadosDoForm.get('image'),
+                imageUrl: dadosDoForm.get('image'),
+                creatorSlug: usuarioAleatorio,
               }
-              const comunidadesAtualizadas = [...comunidades,comunidade];
-              setComunidades (comunidadesAtualizadas);
+              
+              fetch('/api/comunidades', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(comunidade)
+              })
+              .then(async (response) => {
+                const dados = await response.json();
+                console.log(dados.registroCriado);
+                const comunidade = dados.registroCriado;
+                const comunidadesAtualizadas = [...comunidades, comunidade];
+                setComunidades(comunidadesAtualizadas)
+              })
+
             }}>
               <div>
                 <input
@@ -173,7 +200,6 @@ function ProfileRelationsBox(propriedades) {
               </button>
             </form>
           </Box>
-
        </div>
        <div className ="profileRelationsArea" style={{ gridArea: 'profileRelationsArea'}}>
          
