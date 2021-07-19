@@ -1,84 +1,72 @@
-# Example app with styled-components
+## Aula 1: Components com React, Styled Components e NextJS
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+## Detalhes do desafio:
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+Nesta primeira aula de **React** começamos a fazer o nosso perfil no *Alurakut*! E colocamos ele no ar!
 
-## Preview
+Nesta aula já usamos **Create Next App** para iniciar nosso projeto e **styled-components** para cuidar da camada de estilo da nossa aplicação, duas ferramentas essenciais do mundo React. Também entendemos como React se tornou tão popular no mercado de tecnologia e como iniciaremos o nosso aprendizado com a tecnologia.
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## Conteúdo detalhado da aula
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+- Iniciando um projeto com Create Next App;
+- Criamos components com React usando styled-components;
+- Organizamos as pastas do nosso projeto;
+- Passamos propriedades para components;
+- Fizemos deploy do seu Alurakut na Vercel.
 
-## Deploy your own
+## Aula 2: React, State e o primeiro Formulário
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Detalhes do desafio:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+Nesta aula aprendemos a lidar com o state do React e entender melhor o que é uma SPA (Single Page Application), além de dar mais vida para nosso perfil consumindo a api do github para popular nossos amigos!
 
-## How to use
+## Conteúdo detalhado da aula
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+- Entender melhor o que é um SPA;
+- Conhecer o hook useEffect;
+- Criação do formulário para cadastrar comunidade;
+- E sempre faremos deploy do seu Alurakut na Vercel.
 
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
-```
+## Aula 3: Hooks no React. useEffect e protocolo HTTP
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Detalhes do desafio:
 
-### Try it on CodeSandbox
+Nesta aula usamos a API do GitHub para preencher os nossos amigos e salvamos as nossas comunidades com o DatoCMS
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
+## Conteúdo detalhado da aula
 
-### Notes
+- Entendemos um pouco melhor sobre como funciona o protocolo HTTP;
+- Consumimos a API do Github usando `fetch` para preencher os nossos amigos;
+- Conhecemos Promises e como lidar com o JSON;
+- Usamos o hook useEffect para lidar com código assíncrono;
+- Conhecemos o DatoCMS, o sistema de gestão de conteúdo que iremos utilizar na nossa aplicação;
+- Criamos os modelos dos conteúdos que iremos gerenciar no DatoCMS;
+- Criaamos as nossas comunidades pela interface do DatoCMS.
 
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
+## Aula 4: Requisições com GraphQL, BFF e AJAX!
 
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
+## Detalhes do desafio:
 
-**components/StyledLink.js**
+Nesta aula usamos GraphQL para consumir nossos dados e salvamos nossos dados no DatoCMS pela nossa interface do Alurakut.
 
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
+## Conteúdo detalhado da aula
 
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
+- Entendemos o que é XML e AJAX;
+- Usamos queries GraphQL para consumir os dados do DatoCMS;
+- Fizemos um BFF (Back-end For Front-end) para proteger nossos dados ao enviar dados para o servidor;
+- Criaamos nossas comunidades pela interface do nosso Alurakut.
 
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+## Aula 5 e info bootcamp: Sistema de Login: o desafio final
 
-  &:hover {
-    color: #40a9ff;
-  }
+## Detalhes do desafio:
 
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
+Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login. 
 
-**pages/index.js**
+## Conteúdo detalhado da aula
 
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+- Criaamos a nossa página de Login;
+- Roteamento com Next.js;
+- Como funciona o redirecionamento de páginas;
+- Formulários com gerenciamento do estado do input;
+- Salvamos cookies com o padrão JWT para autenticar nossa página;
+- Decodificar o nosso token para mostrar a nossa Home apenas para usuários autenticados;
