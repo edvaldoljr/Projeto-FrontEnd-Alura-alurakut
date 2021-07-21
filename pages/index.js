@@ -65,7 +65,7 @@ export default function Home(props) {
       // 0 -  Pegar o array de dados do github
       React.useEffect(function(){
         //GET 
-        fetch('https://api.github.com/users/edvaldoljr/followers')
+        fetch(`https://api.github.com/users/${usuarioAleatorio}/followers`)
         .then(function (respostaDoServidor) {
           return respostaDoServidor.json();
         })
@@ -73,7 +73,7 @@ export default function Home(props) {
           setSeguidores(respostaCompleta);
         })
 
-        fetch('https://api.github.com/users/edvaldoljr/following')
+        fetch(`https://api.github.com/users/${usuarioAleatorio}/following`)
         .then(function (respostaDoServidor) {
           return respostaDoServidor.json();
         })
@@ -126,13 +126,13 @@ export default function Home(props) {
        <div className ="welcomeArea" style={{ gridArea: 'welcomeArea'}}>
        <Box>
             <h1 className="title">
-               ♣ ̎€ɖvαℓdơ ʝǔɲɨǾȓ ♣➹ 
+               Bem vindo {usuarioAleatorio}
               <hr/>
             </h1>
-
+ 
             <OrkutNostalgicIconSet />
             <hr/>
-            <div>
+            {/* <div>
                <p>Quem sou eu: <h5>Meu nome é Edvaldo tenho 27 anos e atualmente estudo Desenvolvimento de Software</h5></p>   
                  <img src="https://img.ibxk.com.br/materias/3991/81224.gif"/> 
                  <h5>
@@ -145,10 +145,10 @@ export default function Home(props) {
               █████▒▒▒▒
               50%
               ███████▒▒▒▒
-              {/* 100%
-              ██████████ */}
+              100%
+              ██████████
               </h5>
-            </div>
+            </div> */}
           </Box>
 
           <Box>
