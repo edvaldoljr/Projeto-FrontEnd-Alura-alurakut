@@ -126,7 +126,7 @@ export default function Home(props) {
        <div className ="welcomeArea" style={{ gridArea: 'welcomeArea'}}>
        <Box>
             <h1 className="title">
-               Bem vindo {usuarioAleatorio}
+               Bem vindo(a) {usuarioAleatorio}
               <hr/>
             </h1>
  
