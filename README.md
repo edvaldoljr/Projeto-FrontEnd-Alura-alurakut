@@ -1,3 +1,22 @@
+# Projeto Alura Kut
+
+Este Projeto aborda tecnologias como React, Styled Components, NextJS, State, Formulários, Hooks, HTTP, GraphQL, BFF, AJAX, Login e JWT. Usando o Create Next App, você aprenderá a criar componentes com React e usar o styled-components para lidar com a camada de estilo. Além disso, você aprenderá sobre o uso do state do React, o protocolo HTTP e como consumir a API do Github. A aula de GraphQL ensina como consumir dados com queries GraphQL e protegê-los com BFF. No final do bootcamp, você aprenderá a criar uma página de login, usando rotas e autenticação com JWT.
+
+## Para desenvolver o projeto Alurakut, são necessários os seguintes requisitos:
+
+- Conhecimento em React, framework de desenvolvimento de interfaces de usuário;
+- Conhecimento em styled-components, biblioteca para estilização de componentes no React;
+- Conhecimento em NextJS, framework para desenvolvimento de aplicações do tipo Single Page Application (SPA);
+- Conhecimento em GraphQL, linguagem de consulta a APIs;
+- Conhecimento em DatoCMS, sistema de gestão de conteúdo;
+- Conhecimento em HTTP, protocolo de transferência de hipertexto;
+- Conhecimento em JWT, padrão de autenticação de tokens;
+- Conhecimento em Promises, conceito de programação assíncrona;
+- Conhecimento em fetch, biblioteca para requisições HTTP;
+- Conhecimento em uso de hooks, conceito de gerenciamento de estado em React;
+- Conhecimento em roteamento, navegação entre as páginas de uma aplicação;
+- Conhecimento em formulários, elementos HTML para coleta de dados do usuário.
+
 ## Aula 1: Components com React, Styled Components e NextJS
 
 ## Detalhes do desafio:
@@ -72,3 +91,5 @@ Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login.
 - Decodificar o nosso token para mostrar a nossa Home apenas para usuários autenticados;
 
 # **Deixe um Star** 
+
+Não hesite em deixar uma avaliação positiva. Sua contribuição é importante.
