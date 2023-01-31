@@ -90,6 +90,10 @@ Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login.
 - Salvamos cookies com o padrão JWT para autenticar nossa página;
 - Decodificar o nosso token para mostrar a nossa Home apenas para usuários autenticados;
 
-# **Deixe um Star** 
+Acesso o Link:
 
-Não hesite em deixar uma avaliação positiva. Sua contribuição é importante.
+![](https://github.com/edvaldoljr/Projeto-FrontEnd-Alura-alurakut/blob/main/img/img-projeto.gif?raw=true)
+
+# ⭐️**Deixe um Star** ⭐️
+
+Obrigado por conferir meu repository! É muito gratificante saber que alguém está interessado no meu trabalho. Se você gostou do que viu, deixar um star seria uma grande ajuda no meu crescimento e me motivaria a continuar fazendo projetos. O apoio de pessoas como você é fundamental para que eu possa seguir evoluindo e produzindo conteúdos cada vez melhores. Obrigado mais uma vez e espero que você possa acompanhar meus futuros projetos!
