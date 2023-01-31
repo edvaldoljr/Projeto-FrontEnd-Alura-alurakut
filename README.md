@@ -90,7 +90,7 @@ Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login.
 - Salvamos cookies com o padrão JWT para autenticar nossa página;
 - Decodificar o nosso token para mostrar a nossa Home apenas para usuários autenticados;
 
-Acesso o Link:
+## Acesso o Link: https://alurakut-nine-eta.vercel.app/login
 
 ![](https://github.com/edvaldoljr/Projeto-FrontEnd-Alura-alurakut/blob/main/img/img-projeto.gif?raw=true)
 
