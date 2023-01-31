@@ -70,3 +70,5 @@ Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login.
 - Formulários com gerenciamento do estado do input;
 - Salvamos cookies com o padrão JWT para autenticar nossa página;
 - Decodificar o nosso token para mostrar a nossa Home apenas para usuários autenticados;
+
+# **Deixe um Star** 
