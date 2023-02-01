@@ -90,7 +90,7 @@ Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login.
 - Salvamos cookies com o padrão JWT para autenticar nossa página;
 - Decodificar o nosso token para mostrar a nossa Home apenas para usuários autenticados;
 
-## Hospedagemm
+## Hospedagem
 
 Esta aplicação foi hospedada no Vercel, uma plataforma de hospedagem de aplicações web altamente escalável e confiável. Com o Vercel, você pode ter a certeza de que sua aplicação estará disponível 24/7 para todos os seus usuários, oferecendo uma experiência rápida e suave. Além disso, a integração com outras ferramentas como Git, permite um processo de desenvolvimento e publicação fácil e eficiente. Nós escolhemos o Vercel para hospedar nossa aplicação porque acreditamos que oferece a melhor experiência para nossos usuários.
 
