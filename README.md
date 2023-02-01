@@ -1,4 +1,6 @@
-# Projeto Alura Kut
+# Projeto AluraKut
+
+![](https://github.com/edvaldoljr/Projeto-FrontEnd-Alura-alurakut/blob/main/img/img-projeto.gif?raw=true)
 
 Este Projeto aborda tecnologias como React, Styled Components, NextJS, State, Formulários, Hooks, HTTP, GraphQL, BFF, AJAX, Login e JWT. Usando o Create Next App, você aprenderá a criar componentes com React e usar o styled-components para lidar com a camada de estilo. Além disso, você aprenderá sobre o uso do state do React, o protocolo HTTP e como consumir a API do Github. A aula de GraphQL ensina como consumir dados com queries GraphQL e protegê-los com BFF. No final do bootcamp, você aprenderá a criar uma página de login, usando rotas e autenticação com JWT.
 
@@ -94,8 +96,8 @@ Pra fechar nosso projeto, aprendemos a lógica de como trabalhar com login.
 
 Esta aplicação foi hospedada no Vercel, uma plataforma de hospedagem de aplicações web altamente escalável e confiável. Com o Vercel, você pode ter a certeza de que sua aplicação estará disponível 24/7 para todos os seus usuários, oferecendo uma experiência rápida e suave. Além disso, a integração com outras ferramentas como Git, permite um processo de desenvolvimento e publicação fácil e eficiente. Nós escolhemos o Vercel para hospedar nossa aplicação porque acreditamos que oferece a melhor experiência para nossos usuários.
 
-## Acesso o Link: https://alurakut-nine-eta.vercel.app/login
-![](https://github.com/edvaldoljr/Projeto-FrontEnd-Alura-alurakut/blob/main/img/img-projeto.gif?raw=true)
+## Acesso o Link e confira: https://alurakut-nine-eta.vercel.app/login
+
 
 # ⭐️**Deixe um Star** ⭐️
 
